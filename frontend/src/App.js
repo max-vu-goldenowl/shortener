@@ -14,12 +14,13 @@ class App extends Component {
 
   //Responsible for saving the task
   handleShorten = async () => {
+    console.log(process.env.REACT_APP_BACKEND_URL)
     const { originalUrl } = this.state
     try {
       this.setState({
         shortUrl: ''
       })
-      const response = await axios.post("http://localhost:8000/api/shorturls/save/", { original_url: originalUrl });
+      const response = await axios.post(process.env.REACT_APP_BACKEND_URL + "/api/shorturls/save/", { original_url: originalUrl });
       this.setState({
         shortUrl: response.data.short_url
       })

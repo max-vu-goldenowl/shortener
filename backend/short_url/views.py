@@ -11,8 +11,8 @@ def save_url_view(request):
     short_url_object, created = Shortener.objects.get_or_create(original_url=json_data['original_url'])
 
     data = {
-      'original_url': short_url_object.original_url,
-      'short_url': request.build_absolute_uri('/') + short_url_object.short_url
+        'original_url': short_url_object.original_url,
+        'short_url': request.build_absolute_uri('/') + short_url_object.short_url
     }
 
     return JsonResponse(data)

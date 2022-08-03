@@ -7,9 +7,14 @@ Backend
 ```
 python -m pip install pipenv
 pipenv shell
+pipenv install django
+python -m pip install psycopg2
+
+python3 manage.py runserver
 ```
 
 Frontend
 ```
+npm install react-bootstrap bootstrap
 npm start
 ```
